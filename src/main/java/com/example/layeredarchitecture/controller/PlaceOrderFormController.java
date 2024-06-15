@@ -346,11 +346,14 @@ public class PlaceOrderFormController {
         /*Transaction*/
         Connection connection = null;
         try {
-            connection = DBConnection.getDbConnection().getConnection();
+           /* connection = DBConnection.getDbConnection().getConnection();
             PreparedStatement stm = connection.prepareStatement("SELECT oid FROM `Orders` WHERE oid=?");
             stm.setString(1, orderId);
-            /*if order id already exist*/
+            *//*if order id already exist*//*
             if (stm.executeQuery().next()) {
+
+            }*/
+            if (orderDAO.orderIdExists(orderId)) {
 
             }
 
